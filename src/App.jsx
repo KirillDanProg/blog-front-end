@@ -12,6 +12,7 @@ import './App.css'
 import {useAppInit} from "./hooks/useAppInit.js";
 import {PATH} from "./routes.js";
 import {CreatePostPage} from "./components/CreatePostPage.jsx";
+import {Snackbar} from "./components/common/Snackbar.jsx";
 
 function App() {
     const [theme, setTheme] = useState("dark")
@@ -22,6 +23,7 @@ function App() {
 
     return (
         <ThemeProvider theme={themes[theme]}>
+            <Snackbar/>
             <Routes>
                 <Route path={PATH.DEFAULT} element={<Main/>}>
                     <Route index element={<Posts/>}/>
