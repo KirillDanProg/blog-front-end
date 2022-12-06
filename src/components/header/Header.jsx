@@ -37,6 +37,9 @@ const StyledHeader = styled.div`
     .menu-burger {
       display: none;
     }
+    .create-post-btn {
+     display: none;
+    }
   }
 `
 export const Header = ({toggleSidebar, isShown}) => {

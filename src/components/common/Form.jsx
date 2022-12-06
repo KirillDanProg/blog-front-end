@@ -58,7 +58,7 @@ export const Form = ({formType}) => {
 
     // todo: fix undefined
     const onSubmit = data => {
-        if (formType === "register") {
+        if (formType === "signin") {
             data && dispatch(authRegister(data))
         }
         if (formType === "login") {
