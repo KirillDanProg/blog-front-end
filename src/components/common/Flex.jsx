@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import {device} from "../../assets/mediaqueries/media.js";
 
@@ -10,6 +10,7 @@ const StyledFlex = styled.div`
   width: 100%;
   text-align: center;
   margin: ${props => props.margin || "0"};
+  gap: ${props => props.gap || "0"};
 
   ${props => props.position === "center" && `
     position: absolute;

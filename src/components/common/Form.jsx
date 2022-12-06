@@ -12,15 +12,19 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const StyledForm = styled.form`
+  position: relative;
+  top: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 80%;
-  height: 70vh;
+  width: 90%;
   margin: 0 auto;
-
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  
   .loginTitle {
     margin-bottom: 20px;
     border-radius: 4px;
@@ -34,7 +38,8 @@ const StyledForm = styled.form`
   }
 
   @media ${device.tablet} {
-    width: 300px
+    width: 350px;
+    padding: 30px;
   }
 `
 export const Form = ({formType}) => {
@@ -90,7 +95,7 @@ export const Form = ({formType}) => {
                         ? <Button callback={onSubmit} variant="contained">
                             Войти
                         </Button>
-                        : <Flex direction="column" gap="10px" margin="10px 0 0">
+                        : <Flex direction="column" gap="10px" margin="15px 0 0">
                             <Button callback={onSubmit} variant="contained">
                                 Зарегистрироваться
                             </Button>
