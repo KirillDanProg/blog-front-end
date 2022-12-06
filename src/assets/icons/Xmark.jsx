@@ -1,7 +1,7 @@
-import React, {FC} from "react"
+import React from "react"
 import styled from "styled-components";
 
-const StyledXmark = styled.svg<ArrowBackPropsType>`
+const StyledXmark = styled.svg`
   path {
     fill: ${props => props.color}
   }
@@ -9,11 +9,7 @@ const StyledXmark = styled.svg<ArrowBackPropsType>`
   cursor: pointer;
 `
 
-type ArrowBackPropsType = {
-    size?: string
-    color?: string
-}
-export const Xmark: FC<ArrowBackPropsType> = (props) => {
+export const Xmark = (props) => {
     return (
         <StyledXmark {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path

@@ -8,9 +8,10 @@ const StyledMenu = styled.svg`
   width: 30px;
   height: 30px;
   cursor: pointer;
-z-index: 2;
+  z-index: 2;
+
   path {
-    fill: black;
+    fill: ${props => props.theme.color};
   }
 
   @media ${device.tablet} {
