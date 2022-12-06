@@ -23,7 +23,9 @@ function App() {
 
     return (
         <ThemeProvider theme={themes[theme]}>
+
             <Snackbar/>
+
             <Routes>
                 <Route path={PATH.DEFAULT} element={<Main/>}>
                     <Route index element={<Posts/>}/>
