@@ -6,5 +6,9 @@ export const store = configureStore({
     reducer: {
         posts: postsReducer,
         auth: authReducer
-    }
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        })
 })

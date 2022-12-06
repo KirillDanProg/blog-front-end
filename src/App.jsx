@@ -10,6 +10,9 @@ import {LoginPage} from "./components/common/signin-login/LoginPage.jsx";
 import {useAuthRedirect} from "./hooks/useAuthRedirect.js";
 import './App.css'
 import {useAppInit} from "./hooks/useAppInit.js";
+import {PATH} from "./routes.js";
+import {CreatePostPage} from "./components/CreatePostPage.jsx";
+import {Snackbar} from "./components/common/Snackbar.jsx";
 
 function App() {
     const [theme, setTheme] = useState("dark")
@@ -20,12 +23,16 @@ function App() {
 
     return (
         <ThemeProvider theme={themes[theme]}>
+
+            <Snackbar/>
+
             <Routes>
-                <Route path="/" element={<Main/>}>
+                <Route path={PATH.DEFAULT} element={<Main/>}>
                     <Route index element={<Posts/>}/>
-                    <Route path="posts/:id" element={<Post/>}/>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="signin" element={<SignInPage/>}/>
+                    <Route path={PATH.POST} element={<Post/>}/>
+                    <Route path={PATH.LOGIN} element={<LoginPage/>}/>
+                    <Route path={PATH.SIGN_IN} element={<SignInPage/>}/>
+                    <Route path={PATH.CREATE_POST} element={<CreatePostPage/>}/>
                 </Route>
             </Routes>
         </ThemeProvider>

@@ -1,10 +1,7 @@
-import React, {ChangeEvent, FC, useEffect, useState} from "react"
+import React, { useEffect, useState} from "react"
 
-type EditableSpanType = {
-    value: string | null
-    callback?: (value: string) => void
-}
-export const EditableSpan: FC<EditableSpanType>= (props: any) => {
+
+export const EditableSpan = (props) => {
     const [value, setValue] = useState(props.value)
     const [editMode, setEditMode] = useState(false)
 
@@ -12,7 +9,7 @@ export const EditableSpan: FC<EditableSpanType>= (props: any) => {
         setValue(props.value)
     }, [props.value])
 
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e) => {
         setValue(e.currentTarget.value)
     }
     const onBlurHandler = () => {
@@ -21,7 +18,7 @@ export const EditableSpan: FC<EditableSpanType>= (props: any) => {
             props.callback(value)
         }
     }
-    const onEnterHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onEnterHandler = (e) => {
         if (e.key === "Enter" && value.trim()) {
             props.callback(value)
             setEditMode(false)
