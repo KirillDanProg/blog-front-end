@@ -10,7 +10,7 @@ const StyledMenu = styled.svg`
   cursor: pointer;
 
   path {
-    fill: lightgray;
+    fill: ${props => props.theme.subTextColor};
   }
 
   @media ${device.tablet} {
@@ -19,8 +19,6 @@ const StyledMenu = styled.svg`
 `
 
 export const MenuBurger = ({toggleSidebar}) => {
-
-
 
     const onClickHandler = () => {
         toggleSidebar(true)
