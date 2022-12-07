@@ -29,7 +29,6 @@ export const LoginLogout = () => {
                                     text="Зарегистрироваться"/>
                     </Wrapper>
                     : <Wrapper className="header logout">
-                        LOGO
                         <Button callback={logoutHandler}
                                 variant="contained"
                         >

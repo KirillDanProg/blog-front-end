@@ -7,8 +7,9 @@ const StyledCreatePostPage = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px auto;
   gap: 20px;
+  max-width: 600px;
 
   .field {
     width: 90%;
@@ -17,6 +18,7 @@ const StyledCreatePostPage = styled.div`
   .textarea {
     width: 90%;
     min-height: 100px;
+    height: 400px;
   }
 `
 export const CreatePostPage = () => {
@@ -35,7 +37,7 @@ export const CreatePostPage = () => {
 
             </textarea>
 
-            <Button>
+            <Button variant="contained">
                 Опубликовать
             </Button>
         </StyledCreatePostPage>

@@ -9,8 +9,10 @@ import {useSelector} from "react-redux";
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
+  gap: 20px;
   width: 100%;
   height: 50px;
+  padding: 0 20px;
   background: #1D2126;
 
   .header {
@@ -18,27 +20,22 @@ const StyledHeader = styled.div`
   }
 
   .create-post-btn {
-    margin: 0 auto;
   }
 
   @media ${device.tablet} {
-    justify-content: space-between;
+    justify-content: end;
     .header {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      justify-content: end;
+      display: block;
+      //align-items: center;
     }
 
     .header.logout {
-      justify-content: space-between;
     }
 
     .menu-burger {
       display: none;
     }
     .create-post-btn {
-     display: none;
     }
   }
 `
@@ -51,6 +48,12 @@ export const Header = ({toggleSidebar, isShown}) => {
     return (
         <StyledHeader>
 
+            <CustomLink className="create-post-btn"
+                        variant="contained"
+                        text="+ Создать статью"
+                        path={`${createPostPath}`}
+            />
+
             <LoginLogout/>
 
             {
@@ -59,14 +62,6 @@ export const Header = ({toggleSidebar, isShown}) => {
                     : <MenuBurger className="menu-burger"
                                   toggleSidebar={toggleSidebar}/>
             }
-
-                <CustomLink className="create-post-btn"
-                            variant="contained"
-                            text="+ Создать статью"
-                            path={`${createPostPath}`}
-                />
-
         </StyledHeader>
     )
 };
-

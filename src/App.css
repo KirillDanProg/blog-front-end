@@ -2,7 +2,12 @@
     font-family: 'Exo 2', sans-serif;
     box-sizing: border-box;
 }
+html {
+    overflow: hidden;
+}
 body {
+    position: relative;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
